@@ -1,0 +1,164 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #ff9000;
+  height: 100svh;
+}
+:root {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+::selection {
+  background-color: #ff9000;
+  color: #fff;
+}
+::-moz-selection {
+  background-color: #ff9000;
+  color: #fff;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+/*   height: 60vh; */
+  padding: 5px 0;
+}
+.formHead {
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  font-size: 2rem;
+  color: #fff;
+  text-transform: capitalize;
+}
+.formContainer {
+  margin: 0 0;
+  padding: 20px 30px;
+  background: #34a85a;
+  width: 300px;
+  border-radius: 10px;
+}
+.inputContainer {
+  margin-top: 10px;
+  /*   border: 1px solid blue; */
+  width: 300px;
+  padding: 0 5px;
+  color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userInput {
+  width: 90%;
+  border: 1px solid #6633cc;
+  padding: 10px 10px;
+  border-radius: 10px;
+  background: transparent !important;
+}
+.userInput:focus {
+  outline: none;
+}
+.userLabel {
+  font-size: 1rem;
+  text-transform: capitalize;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  transition: top 0.2s ease-in-out;
+  padding: 0 5px;
+  font-weight: 600;
+}
+.userInput:valid ~ .userLabel,
+.userInput:focus ~ .userLabel {
+  top: -8px;
+  background: #34a85a;
+}
+.submitContainer {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+#submitButton {
+  padding: 8px 15px;
+  border-radius: 10px;
+  border: none;
+  position: relative;
+  z-index: 0;
+  color: #fff;
+}
+#submitButton::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #34a85a,
+    #ff9000,
+    #6633cc,
+    rgba(16, 44, 87, 1)
+  );
+  background-size: 600%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  border-radius: 10px;
+  animation: buttonAnimation 15s linear infinite;
+  opacity: 1;
+}
+@keyframes buttonAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+#submitButton::after {
+  content: "";
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+#submitButton:hover::after {
+  opacity: 0;
+}
+.error {
+  padding: 5px 0;
+  color: red;
+  font-size: 0.9rem;
+  margin-left: 5px;
+  /*   border: 1px solid red; */
+  width: 90%;
+  font-weight: 600;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0px 1000px #34a85a inset;
+}
+input:-moz-autofill {
+  background-color: transparent !important;
+  color: #000 !important;
+}
+input:-ms-autofill {
+  background-color: transparent !important;
+  color: #000 !important;
+}
