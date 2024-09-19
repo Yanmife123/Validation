@@ -4,7 +4,7 @@ require('database/account.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $add = new addAccount($_POST);
     if ($add->addTo_Database() === 'done') {
-        header("location: index.php");
+        header("location: login.php");
     }
     /*   $add->viewProperties(); */
     // $validateEmail_Result = $add->validateEmail();
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <main>
         <section class="formContainer">
-            <form action="<?php  ?>" method="POST" class="form" novalidate>
+            <form action="" method="POST" class="form" novalidate>
                 <div class="formHead">
                     <h1> register</h1>
                 </div>

@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
     <main>
         <section class="formContainer">
-            <form action="<?php  ?>" method="POST" class="form" novalidate>
+            <form action="" method="POST" class="form" novalidate>
                 <div class="formHead">
                     <h1>Login</h1>
                 </div>
